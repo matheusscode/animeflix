@@ -14,8 +14,9 @@ import ImageFooter from "../../components/ImageFooter";
 //Context
 import { useContextAPI } from "../../context/ContextAPI";
 
-//LogoImage
-import logoImg from "../../../public/assets/images/animexp.png";
+//Images
+import logoImg from "/public/assets/images/animexp.png";
+
 
 export default function Home() {
   const { isLoading } = useContextAPI();

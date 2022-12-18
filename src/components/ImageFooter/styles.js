@@ -9,7 +9,7 @@ export const Container = styled.footer`
   width: 100%;
   height: 35vh;
   background-blend-mode: darken;
-  background: rgba(0, 0, 0, 0.5) url("/public/assets/images/image-footer.png")
+  background: rgba(0, 0, 0, 0.5) url("../../../public/assets/images/image-footer.png")
     no-repeat center center / cover;
 
   h2 {

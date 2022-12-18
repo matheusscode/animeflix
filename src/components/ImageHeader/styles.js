@@ -9,6 +9,7 @@ export const Container = styled.header`
   width: 100%;
   height: 35vh;
   background-blend-mode: darken;
-  background: rgba(0, 0, 0, 0.5) url("/public/assets/images/image-header.jpg")
-    no-repeat center center / cover;
+  background: rgba(0, 0, 0, 0.5)
+    url("../../../public/assets/images/image-header.jpg") no-repeat center
+    center / cover;
 `;
