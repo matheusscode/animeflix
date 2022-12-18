@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import FooterImg from "/public/assets/images/image-footer.png";
 
 export const Container = styled.footer`
   display: flex;
@@ -9,8 +10,8 @@ export const Container = styled.footer`
   width: 100%;
   height: 35vh;
   background-blend-mode: darken;
-  background: rgba(0, 0, 0, 0.5) url("../../../public/assets/images/image-footer.png")
-    no-repeat center center / cover;
+  background: rgba(0, 0, 0, 0.5) url(${FooterImg}) no-repeat center center /
+    cover;
 
   h2 {
     text-align: center;
