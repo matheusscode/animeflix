@@ -21,7 +21,6 @@ export default function Header() {
       <C.MenuButton onClick={handleToggleMenu}>
         <FaBars className="burger-icon" />
       </C.MenuButton>
-
       <C.Nav>
         <C.MenuCloseButton onClick={handleToggleMenu}>
           <HiXMark className="xmark-icon" />
@@ -53,7 +52,6 @@ export default function Header() {
           </li>
         </ul>
       </C.Nav>
-
       <C.AccessArea>
         <C.Button href="/sing-in">
           <FaUserAlt />

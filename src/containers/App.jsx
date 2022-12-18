@@ -35,7 +35,6 @@ export default function App() {
         )}
       </Button>
       <Footer />
-      <button onClick={handleChangeTheme}> dasdas</button>
     </ThemeProvider>
   );
 }

@@ -13,7 +13,6 @@ export default function RecentAnimes() {
         <br />
         <h2>Animes Recentes</h2>
       </C.Description>
-
       <C.CardContainer>
         {animes && animes.slice(0, 12).map((anime, index) => (
           <AnimeCard item={anime} key={index} />

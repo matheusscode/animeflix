@@ -32,7 +32,6 @@ export default function SingIn() {
     <C.Container>
       <Layout>
         <img src={logoImg} alt="anime-xp-logo" />
-
         <C.Form onSubmit={handleSubmit}>
           <div className="form-control">
             <C.Label>Email</C.Label>
@@ -43,7 +42,6 @@ export default function SingIn() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-
           <div className="form-control">
             <C.Label>Senha</C.Label>
             <C.Input
@@ -53,7 +51,6 @@ export default function SingIn() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-
           <div className="saved-account">
             <input type="checkbox" />
             <C.Label>Deseja lembrar sua conta?</C.Label>
@@ -62,7 +59,6 @@ export default function SingIn() {
           <div className="form-button">
             <C.FormInput type="submit" value="Entrar" />
           </div>
-
           <h4>
             Não possui uma conta? <a href="/register">Crie uma agora!</a>{" "}
           </h4>

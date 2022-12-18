@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 78vh;
   color: #000;
   background: ${(props) =>
       props.theme.mode === "dark"
-        ? "  linear-gradient( to top, #202024, #202024, #202024,  rgb(0 0 0 / 0), rgb(0 0 0 / 0) )"
-        : "  linear-gradient( to top, #fff, #fff, #fff,  rgb(0 0 0 / 0), rgb(0 0 0 / 0) )"},
+        ? "  linear-gradient( to top, #202024, #202024, #202024, #202024,  rgb(0 0 0 / 0), rgb(0 0 0 / 0) )"
+        : "  linear-gradient( to top, #fff, #fff, #fff, #fff, rgb(0 0 0 / 0), rgb(0 0 0 / 0) )"},
     url(${(props) => props.background}) no-repeat center center / cover;
 
   h3,
@@ -19,10 +18,6 @@ export const Container = styled.div`
   h5 {
     font-size: 1.2rem;
     color: ${(props) => (props.theme.mode === "dark" ? "#fff" : "#000")};
-  }
-
-  @media (max-width: 750px) {
-    height: 1000px;
   }
 `;
 
@@ -151,5 +146,24 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #780000;
+  }
+`;
+
+export const RelatedAnimesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 90px 20px;
+  margin: 0 auto;
+  gap: 2rem;
+  max-width: 1400px;
+  text-align: center;
+
+  h2 {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 750px) {
+    padding: 60px 30px;
   }
 `;

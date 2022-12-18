@@ -1,20 +1,86 @@
 import { createContext, useContext } from "react";
-import { useFetchAnimes } from "../utils/hooks/useFetchAnimes";
+import { useState, useEffect } from "react";
+import { requestAPI } from "../services/requestAPI";
 
 export const ContextAPI = createContext();
 
 export const StorageAnimes = ({ children }) => {
-  const { animes, isLoading } = useFetchAnimes();
+  const [isLoading, setIsLoading] = useState(true);
+  const [animes, setAnimes] = useState();
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [search, setSearch] = useState("");
 
-  function findAnimes(name) {
+  useEffect(() => {
+    const fetchAnimes = async () => {
+      const getAnimes = await requestAPI();
+      setAnimes(getAnimes);
+    };
+
+    fetchAnimes();
+    setIsLoading(false);
+  }, []);
+
+  const findAnimes = (name) => {
     if (animes) {
       const requestAnime = animes.find((anime) => anime.name === name);
       return requestAnime;
     }
-  }
+  };
+
+  const onChangeHandler = (e) => {
+    setSearch(search);
+    if (e.target.value.length === 0) {
+      onSearch(undefined);
+    }
+  };
+
+  const onButtonClickHandler = () => {
+    onSearch(search);
+  };
+
+  const onLeftClickHandler = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+  };
+
+  const onRightClickHandler = () => {
+    if (page + 1 !== totalPages) {
+      setPage(page + 1);
+    }
+  };
+
+  const onSearchHandler = async (anime) => {
+    if (!anime) {
+      fetchAnimes();
+    }
+
+    setLoading(true);
+    setNotFound(false);
+    const result = await searchAnime(anime);
+    if (!result) {
+      setNotFound(true);
+    } else {
+      setAnimes([result]);
+      setPage(0);
+      setTotalPages(1);
+    }
+    setLoading(false);
+  };
 
   return (
-    <ContextAPI.Provider value={{ animes, isLoading, findAnimes }}>
+    <ContextAPI.Provider
+      value={{
+        animes,
+        isLoading,
+        findAnimes,
+        onLeftClickHandler,
+        onRightClickHandler,
+        page,
+        totalPages,
+      }}
+    >
       {children}
     </ContextAPI.Provider>
   );

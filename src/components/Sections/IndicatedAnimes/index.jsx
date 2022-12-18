@@ -17,7 +17,6 @@ export default function IndicatedAnimes() {
       <C.Description>
         <h2>Animes Recomendados</h2>
       </C.Description>
-
       <C.CardContainer>
       {animes && animes.slice(12, 24).map((anime, index) => (
           <AnimeCard item={anime} key={index} />

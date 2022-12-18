@@ -14,7 +14,6 @@ export default function Footer() {
         <C.LogoContainer>
           <img src={logoImg} alt="logo-img" />
         </C.LogoContainer>
-
         <C.NavContainer>
         <ul>
           <li><a href="/"><AiFillHome className="icon"/>Início</a></li>
@@ -23,7 +22,6 @@ export default function Footer() {
         </ul>
         <h4>Todos os direitos reservados.</h4>
         </C.NavContainer>
-
         <C.SocialsContainer>
           <ul>
           <li><a href="/"><AiFillGithub className="icon"/></a></li>
@@ -31,7 +29,6 @@ export default function Footer() {
           <li><a href="/"><AiOutlineInstagram className="icon"/></a></li>
         </ul>
         </C.SocialsContainer>
-
     </C.Footer>
   );
 }

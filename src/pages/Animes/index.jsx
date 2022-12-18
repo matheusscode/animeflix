@@ -6,7 +6,6 @@ import AnimeCard from "../../components/AnimeCard";
 import GenrerBar from "../../components/GenrerBar";
 import Pagination from "../../components/Pagination";
 import Loading from "../../components/Loading";
-import ImageHeader from "../../components/ImageHeader";
 
 //Context
 import { useContextAPI } from "../../context/ContextAPI";
@@ -31,7 +30,6 @@ export default function Animes() {
             </C.CardsContainer>
             <Pagination />
           </C.Main>
-
           <GenrerBar />
         </C.Container>
       )}

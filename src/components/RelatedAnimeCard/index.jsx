@@ -1,24 +1,24 @@
 import * as C from "./styles";
-import { AiFillPlayCircle, AiFillStar } from "react-icons/all";
 import { Link } from "react-router-dom";
+import { AiFillPlayCircle, AiFillStar } from "react-icons/all";
 
-export default function AnimeCard({ item }) {
+export default function RelatedAnimeCard({ item }) {
   const { name, imgurl, rating } = item;
 
   return (
-    <C.Container>
-      <Link to={`/anime/${name}`}>
-        <C.Card>
+    <>
+      <C.Container>
+        <Link to={`/anime/${name}`}>
           <C.ThumbContainer>
-            <img src={imgurl} alt={name} />
+            <img src={item.imgurl} alt={item.name} />
             <AiFillPlayCircle className="play-icon" />
           </C.ThumbContainer>
           <C.Description>
             <AiFillStar className="star-icon" />
-            <h4>{rating}</h4>
+            <p>{item.rating}</p>
           </C.Description>
-        </C.Card>
-      </Link>
-    </C.Container>
+        </Link>
+      </C.Container>
+    </>
   );
 }

@@ -30,7 +30,6 @@ export default function Home() {
             <img src={logoImg} alt="" />
             <SearchBar />
           </ImageHeader>
-
           <C.Flex>
             <C.Column>
               <LyricsBar />
@@ -39,7 +38,6 @@ export default function Home() {
                 <IndicatedAnimes />
               </C.AnimeBox>
             </C.Column>
-
             <GenrerBar />
           </C.Flex>
           <ImageFooter>

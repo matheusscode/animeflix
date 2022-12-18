@@ -12,7 +12,6 @@ export const Footer = styled.footer`
 
   @media (max-width: 930px) {
     flex-direction: column;
-
   }
 
   @media (max-width: 750px) {

@@ -31,13 +31,10 @@ export default function Register() {
     }
   }
 
-  
-
   return (
     <C.Container>
       <Layout>
         <img src={logoImg} alt="anime-xp-logo" />
-
         <C.Form onSubmit={handleSubmit}>
           <div className="form-control">
             <C.Label>Email</C.Label>
@@ -48,7 +45,6 @@ export default function Register() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-
           <div className="form-control password">
             <C.Label>Senha</C.Label>
             <C.Input
@@ -61,7 +57,6 @@ export default function Register() {
               {show ? <IoEyeSharp /> : <HiEyeSlash />}
             </button>
           </div>
-
           <div className="form-control password">
             <C.Label>Confirmar senha</C.Label>
             <C.Input
@@ -74,11 +69,9 @@ export default function Register() {
               {show ? <IoEyeSharp /> : <HiEyeSlash />}
             </button>
           </div>
-
           <div className="form-button">
             <C.FormInput type="submit" value="Cadastrar" />
           </div>
-
           <h4>
             Já possui uma conta? <a href="/sing-in">Faça Login!</a>{" "}
           </h4>
