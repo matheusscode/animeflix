@@ -14,12 +14,12 @@ import ImageFooter from "../../components/ImageFooter";
 //Context
 import { useContextAPI } from "../../context/ContextAPI";
 
-//Images
+//Images 
 import logoImg from "/public/assets/images/animexp.png";
 
 
 export default function Home() {
-  const { isLoading } = useContextAPI();
+  const { animes, isLoading } = useContextAPI();
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function Home() {
         <C.Container>
           <ImageHeader>
             <img src={logoImg} alt="" />
-            <SearchBar />
+              <SearchBar />
           </ImageHeader>
           <C.Flex>
             <C.Column>

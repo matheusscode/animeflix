@@ -1,27 +1,61 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 
-  &:hover input,
-  input:focus,
-  input:not(:placeholder-shown) {
-    width: 300px;
-    padding: 1rem;
-    padding-left: 1.5rem;
+  &:hover .list {
+    display: block;
   }
 
-  &:hover .x-mark,
-  input:focus ~ .icons .x-mark,
-  input:not(:placeholder-shown) ~ .icons .x-mark {
-    opacity: 1;
-    color: #000;
+  .list {
+    display: flex;
+    flex-direction: column;
+    width: 368px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding: 0 20px;
+    background-color: ${(props) =>
+      props.theme.mode === "dark" ? "#ff0006" : "#f3f3f3"};
+    display: none;
+    box-shadow: 0 0 3px #f00006;
+    z-index: 2;
+    position: absolute;
+    top: 334px;
+    max-height: 350px;
+    overflow-y: scroll;
+
+    @media (max-width: 1000px) {
+      top: 316px;
+    }
   }
 
-  &:hover .search,
-  input:focus ~ .icons .search,
-  input:not(:placeholder-shown) ~ .icons .search {
-    opacity: 0;
+  .list ul {
+    list-style-type: none;
+  }
+
+  .list ul li {
+    padding: 20px 0;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  &:hover .row {
+    border-radius: 0;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  &:hover .icon,
+  span {
+    background: transparent;
+  }
+
+  @media (max-width: 770px){
+    .list{
+      top: 274px;
+    }
   }
 `;
 
@@ -38,30 +72,21 @@ export const Row = styled.div`
     font-size: 1.1rem;
     border: none;
     padding: 0;
-    width: 0;
+    width: 300px;
     transition: all 0.4s;
     outline: none;
+    padding: 1.5rem 1.5rem;
   }
 
-  .icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin: 7px;
-    border-radius: 50%;
-    background: #ffffff;
-  }
+  .icon {
+    position: relative;
+    background-color: transparent;
+    border-radius: 100px;
+    padding: 18px 18px 0px;
 
-  .icons span {
-    display: flex;
-    position: absolute;
-    color: #000;
-    font-size: 1.3rem;
-  }
-
-  .icons .x-mark {
-    opacity: 0;
+    span {
+      font-size: 2rem;
+      color: #f3f3f3;
+    }
   }
 `;

@@ -50,7 +50,7 @@ export default function Anime() {
               </C.Status>
             </C.Header>
             <C.Bar>
-              <AiFillStar className="icon-star" /> <h2>TMDB 8.0</h2>
+              <AiFillStar className="icon-star" /> <h2>{animeDetails?.rating}</h2>
             </C.Bar>
             <C.Content>
               <C.Description>

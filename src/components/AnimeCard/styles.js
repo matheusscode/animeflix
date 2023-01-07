@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 190px;
   border-radius: 6px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 7px, rgba(0, 0, 0, 0.6) 0px 1px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 7px, rgba(0, 0, 0, 0.6) 0px 1px 6px;
 
   a {
     color: #202024;

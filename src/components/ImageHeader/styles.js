@@ -12,4 +12,9 @@ export const Container = styled.header`
   background-blend-mode: darken;
   background: rgba(0, 0, 0, 0.5) url(${HeaderImg}) no-repeat center center /
     cover;
+  padding-top: 100px;
+
+  @media (max-width: 770px) {
+    padding-top: 60px;
+  }
 `;

@@ -27,22 +27,20 @@ import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyled } from "./styles";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <GlobalStyled />
-      <ToastContainer autoClose={3000} />
-      <StorageAnimes>
-        <Routes>
-          <Route element={<App />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/animes" element={<Animes />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/anime/:name" element={<Anime />} />
-          </Route>
-          <Route path="/sing-in" element={<SingIn />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </StorageAnimes>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <GlobalStyled />
+    <ToastContainer autoClose={3000} />
+    <StorageAnimes>
+      <Routes>
+        <Route element={<App />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/animes" element={<Animes />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/anime/:name" element={<Anime />} />
+        </Route>
+        <Route path="/sing-in" element={<SingIn />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </StorageAnimes>
+  </BrowserRouter>
 );

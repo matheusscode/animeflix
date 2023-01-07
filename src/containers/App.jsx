@@ -1,22 +1,22 @@
-//React
-import React, { useState } from "react";
-
-//Router
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-
-//Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
-//Styled-Components
 import { ThemeProvider } from "styled-components";
 import { AppStyled, Button } from "../styles/AppStyled";
-
-//React-Icons
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
+const themeInitial = () => {
+  const themeSaved = localStorage.getItem("theme");
+  return themeSaved ? JSON.parse(themeSaved) : { mode: "light" };
+};
+
 export default function App() {
-  const [theme, setTheme] = useState({ mode: "light" });
+  const [theme, setTheme] = useState(themeInitial);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   const handleChangeTheme = () => {
     setTheme(theme.mode === "light" ? { mode: "dark" } : { mode: "light" });
